@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tononkalo Malagasy</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>TONONKALO MALAGASY</h1>
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="mg">Malagasy</option>
+            <option value="fr">Français</option>
+            <option value="en">Anglais</option>
+            <option value="de">Allemand</option>
+            <option value="es">Espagnol</option>
+            <option value="zh">Chinois</option>
+            <option value="ja">Japonais</option>
+        </select>
+    </header>
+
+    <section id="connexionPage" class="page">
+        <h2>Connexion</h2>
+        <label for="emailOrPhone">Numéro de téléphone ou adresse email</label>
+        <input type="text" id="emailOrPhone" placeholder="Numéro ou email" required>
+        
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" placeholder="Mot de passe" required>
+        
+        <button onclick="seConnecter()">Se connecter</button>
+        <button onclick="afficherPageInscription()">Créer un compte</button>
+        <p><a href="#" onclick="motDePasseOublie()">Mot de passe oublié ?</a></p>
+        <p>By Faniry</p>
+    </section>
+
+    <section id="inscriptionPage" class="page" style="display:none;">
+        <h2>Créer un Compte</h2>
+        <label for="nom">Anarana:</label>
+        <input type="text" id="nom" placeholder="Anarana" required>
+
+        <label for="prenom">Fanampiny:</label>
+        <input type="text" id="prenom" placeholder="Fanampiny" required>
+
+        <label for="dateNaissance">Daty nahaterahana:</label>
+        <input type="date" id="dateNaissance" required>
+
+        <label for="emailOrPhoneInscription">Numéro ou adresse email:</label>
+        <input type="email" id="emailOrPhoneInscription" placeholder="Numéro ou email" required>
+
+        <label for="category">Mpanoratra/Mpankafy:</label>
+        <select id="category">
+            <option value="Mpanoratra">Mpanoratra</option>
+            <option value="Mpankafy">Mpankafy</option>
+        </select>
+
+        <button onclick="creerCompte()">Créer un compte</button>
+        <p>Manana kaonty ve ianao? <span onclick="afficherPageConnexion()">Se connecter</span></p>
+    </section>
+
+    <section id="confirmationPage" class="page" style="display:none;">
+        <h2>Code de Confirmation</h2>
+        <p>Un code de confirmation a été envoyé à:</p>
+        <p id="confirmationMethod"></p>
+
+        <label for="codeConfirmation">Kaody fanamafisana:</label>
+        <input type="text" id="codeConfirmation" placeholder="Kaody fanamafisana" required>
+
+        <button onclick="validerCode()">Hamarino ny kaody</button>
+        <p><span onclick="renvoyerCode()">Raha mila kaody fanamafisana vaovao</span></p>
+    </section>
+</body>
+</html>
